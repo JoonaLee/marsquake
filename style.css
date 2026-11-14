@@ -1,0 +1,250 @@
+
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: #cc8543;
+            margin: 0;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 탭 전체 박스 */
+        .tab-container {
+            width: 800px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* 상단 탭 버튼 영역 */
+        .tab-buttons {
+            display: flex;
+            background-color: #2c3e50;
+        }
+
+        /* 각 탭 버튼 */
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            background-color: #331d01;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        /* 마우스 올렸을 때 효과 */
+        .tab-btn:hover {
+            background-color: #b88358;
+        }
+
+        /* 활성화된(선택된) 탭 버튼 스타일 */
+        .tab-btn.active {
+            background-color: #ec700a;
+            font-weight: bold;
+        }
+
+        /* 하단 탭 내용 영역 */
+        .tab-content {
+            height: auto;
+            padding: 25px 30px;
+        }
+
+        /* 기본적으로 모든 탭 내용은 숨김 */
+        .tab-pane {
+            display: none;
+        }
+
+        /* 활성화된 탭 내용만 보여줌 */
+        .tab-pane.active {
+            display: block;
+        }
+
+        .tab-pane h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        /* ==========================================
+           LAB equipment 탭 내부 프로필 슬라이더 스타일
+           ========================================== */
+        #tab2 {
+            display: none; /* 기본 숨김 (active가 붙을 때만 flex로 변경) */
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #tab2.active {
+            display: flex; /* 탭 활성화 시 세로 정렬 유지 */
+        }
+
+        #tab2 .profile-title {
+            width: 100%;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .profile-slider-wrapper {
+            width: 100%;
+            overflow: hidden; /* 영역 밖의 다른 페이지 내용 숨김 */
+        }
+
+        .profile-slides {
+            display: flex; /* 1, 2, 3, 4 페이지 가로 나란히 배치 */
+            transition: transform 0.3s ease-in-out;
+            width: 100%;
+        }
+
+        .profile-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            flex-shrink: 0;
+            padding: 10px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 하단 1, 2, 3, 4 번호 버튼 영역 */
+        .profile-dots {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .dot-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            color: #555;
+            transition: all 0.2s;
+        }
+
+        .dot-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .dot-btn.active {
+            background-color: #ec700a;
+            color: white;
+            border-color: #ec700a;
+        }
+/* 1. 전체 컨테이너 박스는 테두리나 배경 없이 투명하게 설정 */
+.slide-content-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* 2. 텍스트 영역은 박스 스타일 완전 제거 */
+.profile-text {
+    flex: 1;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* 3. 오직 그림(이미지) 영역에만 예쁜 박스(테두리)와 배경 적용 */
+.profile-image {
+    flex-shrink: 0;
+    width: 200px;
+    background: #ffffff !important;         /* 박스 안쪽 배경색 (흰색) */
+    border: 1px solid #e0e0e0 !important;     /* 연한 회색 테두리선 */
+    border-radius: 10px !important;         /* 둥근 모서리 */
+    padding: 15px !important;               /* 사진과 박스 테두리 사이의 여백 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 은은한 그림자 효과 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 이미지 자체 스타일 */
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* 슬라이드 전체 폭이 딱 맞게 떨어지도록 설정 */
+.profile-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.profile-slides {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+/* 각 페이지가 탭 컨테이너의 가로 크기를 정확히 100%씩 차지하도록 고정 */
+.profile-slide {
+    min-width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    padding: 10px 5px;
+}
+
+/* 텍스트와 이미지 박스 레이아웃 정렬 */
+.slide-content-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.profile-text {
+    flex: 1;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 이미지가 없는 페이지의 빈 박스 스타일 (원하실 때 사진 박스로 교체 가능) */
+.profile-image {
+    flex-shrink: 0;
+    width: 200px;
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    border: none !important;
+    box-shadow: none !important;
+}

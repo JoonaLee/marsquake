@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지 탭 나누기 예제</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="tab-container">
+        <!-- 1. 상단 탭 버튼 메뉴 -->
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openTab(event, 'tab1')">Mystery LAB: Marsquake</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab2')">LAB equipment</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab3')">Creators</button>
+        </div>
+
+        <!-- 2. 하단 탭 내용 영역 -->
+        <div class="tab-content">
+            
+            <!-- [탭 1] Mystery LAB: Marsquake -->
+            <div id="tab1" class="tab-pane active">
+                <h3>미스터리실험실: 마스퀘이크</h3>
+                <p>나는 화성 이주 프로젝트 대원이다.<br>
+                   평화롭던(?) 어느날 갑자기 닥쳐온 대규모지진<br>
+                   더 이상 여기는 안전하지 않은 것 같다.<br>
+                   탐사기지도 엉망이고, 우주선도 당장이라도 쓰러질듯 위태롭다.<br>
+                   <br>
+                   서둘러 기지 시스템을 복구시켜 지구와 통신을 하라는데?<br>
+                   .<br>
+                   .<br>
+                   내가 해낼 수 있을까?</p>
+
+                <hr style="margin: 30px 0; border: 0; border-top: 5px solid #ddd7d7;">
+                
+                <h4>지구와 화성의 지진</h4>
+                <p>지구에서 발생하는 지진은 주로 여러 개로 나눠진 판의 이동으로 인해 발생합니다.<br>
+                   또한 화산 활동 등 특별한 이벤트 요소들로 인해 발생하기도 합니다.<br>
+                   화성에서도 지진이 발생하고 있으며, 지금도 연구가 계속되고 있습니다.<br>
+                   공식적으로는 NASA의 화성탐사선 인사이트호가 화성 표면의 지진 활동을 탐지했습니다.</p>
+            </div>
+            
+<div id="tab2" class="tab-pane">
+    <h3 class="profile-title">사용된 실험기구들</h3>
+
+    <div class="profile-slider-wrapper">
+        <div class="profile-slides">
+            
+            <!-- 1페이지 -->
+            <div class="profile-slide active">
+                <div class="slide-content-box">
+                    <div class="profile-text">
+                        <p><strong>멀티미터</strong></p>
+                        <p>이것이 어떤 도구냐 하면 전압, 저항, 전류 등을 측정하는 것이여 우리 주변에서는 이런 이런 곳에서 쓰이고 있지 전자회로를 이용하는 다양한 실험에서 측정, 시험용으로 많이 사용된단다.</p>
+                    </div>
+                    <div class="profile-image">
+                        <img src="equipIMG/multimeter.jpg" alt="멀티미터 사진">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2페이지 -->
+            <div class="profile-slide">
+                <div class="slide-content-box">
+                    <div class="profile-text">
+                        <p><strong>오실로스코프/함수발생기</strong></p>
+                        <p>두 번째 페이지입니다. 여기에 경력이나 세부 기술 스택을 작성해 보세요!</p>
+                    </div>
+                    <div class="profile-image empty-box">
+                        <!-- 사진이 없다면 빈 박스로 유지하거나 이미지를 넣을 수 있습니다 -->
+                        <span>사진 영역</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3페이지 -->
+            <div class="profile-slide">
+                <div class="slide-content-box">
+                    <div class="profile-text">
+                        <p><strong>압력측정센서</strong></p>
+                        <p>세 번째 페이지입니다. 프로젝트 경험 등을 적어둘 수 있습니다.</p>
+                    </div>
+                    <div class="profile-image empty-box">
+                        <span>사진 영역</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4페이지 -->
+            <div class="profile-slide">
+                <div class="slide-content-box">
+                    <div class="profile-text">
+                        <p><strong>조도센서</strong></p>
+                        <p>네 번째 페이지입니다. 자격증이나 기타 참고 사항을 적어보세요.</p>
+                    </div>
+                    <div class="profile-image empty-box">
+                        <span>사진 영역</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-slide">
+                <div class="slide-content-box">
+                    <div class="profile-text">
+                        <p><strong>실체현미경</strong></p>
+                        <p>다섯 번째 페이지입니다. 자격증이나 기타 참고 사항을 적어보세요.</p>
+                    </div>
+                    <div class="profile-image empty-box">
+                        <span>사진 영역</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-slide">
+                <div class="slide-content-box">
+                    <div class="profile-text">
+                        <p><strong>원심분리기</strong></p>
+                        <p>여섯 번째 페이지입니다. 자격증이나 기타 참고 사항을 적어보세요.</p>
+                    </div>
+                    <div class="profile-image empty-box">
+                        <span>사진 영역</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-dots">
+        <button class="dot-btn active" onclick="currentProfileSlide(0)">1</button>
+        <button class="dot-btn" onclick="currentProfileSlide(1)">2</button>
+        <button class="dot-btn" onclick="currentProfileSlide(2)">3</button>
+        <button class="dot-btn" onclick="currentProfileSlide(3)">4</button>
+        <button class="dot-btn" onclick="currentProfileSlide(4)">5</button>
+        <button class="dot-btn" onclick="currentProfileSlide(5)">6</button>
+    </div>
+</div>
+               
+            <!-- [탭 3] Creators (연락처 정보) -->
+            <div id="tab3" class="tab-pane">
+                <h3>제작자들</h3>
+                <p>서울시립과학관 교육지원과<br><br>
+                   시나리오 : 전혜빈, 박정선<br>
+                   장치개발 : 전혜빈, 하성민<br>
+                   제어프로그램(ARES03) 제작 : 이지수<br>
+                   내부 인테리어 : 오샛별, 서정우, 전혜빈<br>
+                   영상제작 : 이승범<br>
+                   제작총괄 : 이준하</p>
+            </div>
+
+        </div>
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
