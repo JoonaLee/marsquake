@@ -1,206 +1,225 @@
+* {
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Malgun Gothic', sans-serif;
-            background-color: #cc8543;
-            margin: 0;
-            padding: 50px;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* 탭 전체 박스 */
-        .tab-container {
-            width: 800px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        /* 상단 탭 버튼 영역 */
-        .tab-buttons {
-            display: flex;
-            background-color: #2c3e50;
-        }
-
-        /* 각 탭 버튼 */
-        .tab-btn {
-            flex: 1;
-            padding: 15px;
-            background-color: #331d01;
-            color: white;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        /* 마우스 올렸을 때 효과 */
-        .tab-btn:hover {
-            background-color: #b88358;
-        }
-
-        /* 활성화된(선택된) 탭 버튼 스타일 */
-        .tab-btn.active {
-            background-color: #ec700a;
-            font-weight: bold;
-        }
-
-        /* 하단 탭 내용 영역 */
-        .tab-content {
-            height: auto;
-            padding: 25px 30px;
-        }
-
-        /* 기본적으로 모든 탭 내용은 숨김 */
-        .tab-pane {
-            display: none;
-        }
-
-        /* 활성화된 탭 내용만 보여줌 */
-        .tab-pane.active {
-            display: block;
-        }
-
-        .tab-pane h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        /* ==========================================
-           LAB equipment 탭 내부 프로필 슬라이더 스타일
-           ========================================== */
-        #tab2 {
-            display: none; /* 기본 숨김 (active가 붙을 때만 flex로 변경) */
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #tab2.active {
-            display: flex; /* 탭 활성화 시 세로 정렬 유지 */
-        }
-
-        #tab2 .profile-title {
-            width: 100%;
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        .profile-slider-wrapper {
-            width: 100%;
-            overflow: hidden; /* 영역 밖의 다른 페이지 내용 숨김 */
-        }
-
-        .profile-slides {
-            display: flex; /* 1, 2, 3, 4 페이지 가로 나란히 배치 */
-            transition: transform 0.3s ease-in-out;
-            width: 100%;
-        }
-
-        .profile-slide {
-            min-width: 100%;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            padding: 10px 0;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* 하단 1, 2, 3, 4 번호 버튼 영역 */
-        .profile-dots {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .dot-btn {
-            width: 30px;
-            height: 30px;
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
-            border-radius: 50%;
-            cursor: pointer;
-            font-weight: bold;
-            color: #555;
-            transition: all 0.2s;
-        }
-
-        .dot-btn:hover {
-            background-color: #e0e0e0;
-        }
-
-        .dot-btn.active {
-            background-color: #ec700a;
-            color: white;
-            border-color: #ec700a;
-        }
-/* 1. 전체 컨테이너 박스는 테두리나 배경 없이 투명하게 설정 */
-.slide-content-box {
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background-color: #cc8543;
+    background-image: url('backgroundIMG/background_main.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 135px 40px 100px; /* 상단 타이틀 여백 + 하단 고정 로고 여백 */
+    min-height: 100dvh;
+    min-height: 100dvh;
     display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 100%;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    flex-direction: column;
+    align-items: center;      /* 가로 중앙 정렬 유지 */
+    justify-content: center;  /* 짧은 화면에서도 세로 밸런스 유지 */
+    overflow: hidden;
 }
 
-/* 2. 텍스트 영역은 박스 스타일 완전 제거 */
-.profile-text {
-    flex: 1;
-    border: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
+/* 1. 상단 타이틀 고정 영역 */
+.top-title-banner {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
 }
 
-/* 3. 오직 그림(이미지) 영역에만 예쁜 박스(테두리)와 배경 적용 */
-.profile-image {
-    flex-shrink: 0;
-    width: 200px;
-    background: #ffffff !important;         /* 박스 안쪽 배경색 (흰색) */
-    border: 1px solid #e0e0e0 !important;     /* 연한 회색 테두리선 */
-    border-radius: 10px !important;         /* 둥근 모서리 */
-    padding: 15px !important;               /* 사진과 박스 테두리 사이의 여백 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* 은은한 그림자 효과 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 이미지 자체 스타일 */
-.profile-image img {
-    width: 100%;
+.top-title-banner img {
+    display: block;
+    max-width: 240px;
+    max-height: 105px;
+    width: auto;
     height: auto;
-    border-radius: 6px;
-    object-fit: cover;
-    border: none !important;
-    box-shadow: none !important;
 }
-/* 슬라이드 전체 폭이 딱 맞게 떨어지도록 설정 */
+
+/* 2. 하단 로고 고정 영역 */
+.bottom-logo-banner {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.bottom-logo-banner img {
+    display: block;
+    max-width: 180px;
+    max-height: 65px;
+    width: auto;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* 3. 흰색 탭 전체 박스 (상·하단 로고 영역 침범 방지) */
+.tab-container {
+    width: 800px;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 상단 탭 버튼 영역 */
+.tab-buttons {
+    display: flex;
+    background-color: #2c3e50;
+    flex-shrink: 0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background-color: #331d01;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: #b88358;
+}
+
+.tab-btn.active {
+    background-color: #ec700a;
+    font-weight: bold;
+}
+
+/* 하단 탭 내용 영역: 넘칠 때만 스크롤 */
+.tab-content {
+    flex: 1;
+    min-height: 0;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+/* ==========================================
+   LAB equipment(#tab2) 탭 내부 프로필 슬라이더
+   ========================================== */
+#tab2 {
+    display: none;
+    flex-direction: column;
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    width: 100%;
+}
+
+#tab2.active {
+    display: flex;
+}
+
+#tab2 .profile-title {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 12px;
+    flex-shrink: 0;
+}
+
+/* 빨간 네모칸 영역: 고정 높이 범위 내에서 내용이 넘칠 때만 내부 세로 스크롤 */
 .profile-slider-wrapper {
     width: 100%;
-    overflow: hidden;
+    flex: 1;
+    min-height: 0;
+    max-height: 420px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .profile-slides {
     display: flex;
+    align-items: flex-start;
     transition: transform 0.3s ease-in-out;
     width: 100%;
 }
 
-/* 각 페이지가 탭 컨테이너의 가로 크기를 정확히 100%씩 차지하도록 고정 */
 .profile-slide {
     min-width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
     flex-shrink: 0;
-    padding: 10px 5px;
+    padding: 8px 4px;
+    color: #555;
+    line-height: 1.6;
+    height: 0;
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
-/* 텍스트와 이미지 박스 레이아웃 정렬 */
+/* 현재 선택된 슬라이드만 실제 높이를 가짐 */
+.profile-slide.active {
+    height: auto;
+    overflow: visible;
+    padding: 8px 4px 12px;
+}
+
+/* 1~6 페이지 번호 버튼 영역을 흰색 박스 하단에 고정 */
+.profile-dots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.dot-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    transition: all 0.2s;
+}
+
+.dot-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.dot-btn.active {
+    background-color: #ec700a;
+    color: white;
+    border-color: #ec700a;
+}
+
+/* 슬라이드 콘텐츠 및 이미지 박스 (기존 스타일 그대로 유지) */
 .slide-content-box {
     display: flex;
     align-items: center;
@@ -223,7 +242,6 @@
     line-height: 1.6;
 }
 
-/* 이미지가 없는 페이지의 빈 박스 스타일 (원하실 때 사진 박스로 교체 가능) */
 .profile-image {
     flex-shrink: 0;
     width: 200px;
@@ -231,7 +249,7 @@
     border: 1px solid #e0e0e0 !important;
     border-radius: 10px !important;
     padding: 15px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,4 +265,99 @@
     object-fit: cover;
     border: none !important;
     box-shadow: none !important;
+}
+
+/* ==========================================
+   모바일 반응형 (화면 너비 768px 이하)
+   ========================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 96px 14px 105px; /* 상단 타이틀 및 하단 고정 로고 영역 보호 */
+        background-attachment: fixed;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+
+    .top-title-banner {
+        top: 12px;
+        width: calc(100% - 28px);
+        display: flex;
+        justify-content: center;
+    }
+
+    .top-title-banner img {
+        max-width: 185px;
+        max-height: 76px;
+    }
+
+    .bottom-logo-banner {
+        bottom: 12px;
+        width: calc(100% - 28px);
+        display: flex;
+        justify-content: center;
+    }
+
+    .bottom-logo-banner img {
+        max-width: 130px;
+        max-height: 52px;
+    }
+
+    .tab-container {
+        border-radius: 8px;
+        max-height: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .tab-buttons {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        padding: 12px 8px;
+        font-size: 13px;
+    }
+
+    .tab-content {
+        padding: 18px 16px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .slide-content-box {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+    }
+
+    .profile-slide.active {
+        padding: 4px 2px 12px;
+    }
+
+    /* 모바일 빨간 네모칸: 상·하단 로고/버튼을 침범하지 않는 높이 안에서 넘칠 때만 스크롤 */
+    .profile-slider-wrapper {
+        max-height: calc(100dvh - 335px);
+        min-height: 220px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .profile-image {
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .profile-dots {
+        gap: 6px;
+        padding-top: 12px;
+    }
+
+    .dot-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
 }
