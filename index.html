@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mystery LAB2: Marsquake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,8 +28,10 @@
         <div class="tab-content">
             
             <!-- [탭 1] Mystery LAB: Marsquake -->
-            <div id="tab1" class="tab-pane active">
-                <h3>미스터리실험실: 마스퀘이크</h3>
+        <div id="tab1" class="tab-pane active">
+            <h3 class="tab1-title">미스터리실험실: 마스퀘이크</h3>
+
+            <div class="tab1-scroll-body">
                 <p>나는 화성 이주 프로젝트 대원이다.<br>
                    평화롭던(?) 어느날 갑자기 닥쳐온 대규모지진<br>
                    더 이상 여기는 안전하지 않은 것 같다.<br>
@@ -38,111 +43,130 @@
                    내가 해낼 수 있을까?</p>
 
                 <hr style="margin: 30px 0; border: 0; border-top: 5px solid #ddd7d7;">
-                
+        
                 <h4>지구와 화성의 지진</h4>
                 <p>지구에서 발생하는 지진은 주로 여러 개로 나눠진 판의 이동으로 인해 발생합니다.<br>
                    또한 화산 활동 등 특별한 이벤트 요소들로 인해 발생하기도 합니다.<br>
                    화성에서도 지진이 발생하고 있으며, 지금도 연구가 계속되고 있습니다.<br>
                    공식적으로는 NASA의 화성탐사선 인사이트호가 화성 표면의 지진 활동을 탐지했습니다.</p>
             </div>
-            
-<div id="tab2" class="tab-pane">
-    <h3 class="profile-title">사용된 실험기구들</h3>
 
-    <div class="profile-slider-wrapper">
-        <div class="profile-slides">
-            
-            <!-- 1페이지 -->
-            <div class="profile-slide active">
-                <div class="slide-content-box">
-                    <div class="profile-text">
-                        <p><strong>멀티미터(Multimeter)</strong></p>
-                        <p>이것이 어떤 도구냐 하면 전압, 저항, 전류 등을 측정하는 것이여 우리 주변에서는 이런 이런 곳에서 쓰이고 있지 전자회로를 이용하는 다양한 실험에서 측정, 시험용으로 많이 사용된단다.</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="equipIMG/multimeter.jpg" alt="디지털멀티미터">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2페이지 -->
-            <div class="profile-slide">
-                <div class="slide-content-box">
-                    <div class="profile-text">
-                        <p><strong>오실로스코프(Oscilloscope)/함수발생기(Functiongenerator)</strong></p>
-                        <p>두 번째 페이지입니다. 여기에 경력이나 세부 기술 스택을 작성해 보세요!</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="equipIMG/oscilloscope functiongenerator.jpg" alt="오실로스코프/함수발생기">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3페이지 -->
-            <div class="profile-slide">
-                <div class="slide-content-box">
-                    <div class="profile-text">
-                        <p><strong>압력측정센서(Pressure sensor)</strong></p>
-                        <p>세 번째 페이지입니다. 프로젝트 경험 등을 적어둘 수 있습니다.</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="equipIMG/pressure sensor.jpg" alt="압력측정센서">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4페이지 -->
-            <div class="profile-slide">
-                <div class="slide-content-box">
-                    <div class="profile-text">
-                        <p><strong>조도센서(Photoresistor)</strong></p>
-                        <p>네 번째 페이지입니다. 자격증이나 기타 참고 사항을 적어보세요.</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="equipIMG/photoresistor.jpg" alt="조도센서">
-                    </div>
-                </div>
-            </div>
-
-            <div class="profile-slide">
-                <div class="slide-content-box">
-                    <div class="profile-text">
-                        <p><strong>실체현미경(Stereo Microscope)</strong></p>
-                        <p>다섯 번째 페이지입니다. <br>
-                            자격증이나<br>
-                             기타 참고<br>
-                             사항을 <br>
-                             적어보세요.</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="equipIMG/microscope.jpg" alt="실체현미경">
-                    </div>
-                </div>
-            </div>
-
-            <div class="profile-slide">
-                <div class="slide-content-box">
-                    <div class="profile-text">
-                        <p><strong>원심분리기(Centrifuge)</strong></p>
-                        <p>여섯 번째 페이지입니다. 자격증이나 기타 참고 사항을 적어보세요.</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="equipIMG/centrifuge.jpg" alt="원심분리기">
-                    </div>
-                </div>
-            </div>
+            <div class="tab1-bottom-spacer"></div>
         </div>
-    </div>
+            
+            <div id="tab2" class="tab-pane">
+                <h3 class="profile-title">사용된 실험기구들</h3>
 
-    <div class="profile-dots">
-        <button class="dot-btn active" onclick="currentProfileSlide(0)">1</button>
-        <button class="dot-btn" onclick="currentProfileSlide(1)">2</button>
-        <button class="dot-btn" onclick="currentProfileSlide(2)">3</button>
-        <button class="dot-btn" onclick="currentProfileSlide(3)">4</button>
-        <button class="dot-btn" onclick="currentProfileSlide(4)">5</button>
-        <button class="dot-btn" onclick="currentProfileSlide(5)">6</button>
-    </div>
-</div>
+                <div class="profile-slider-wrapper">
+                    <div class="profile-slides">
+                        
+                        <!-- 1페이지 -->
+                        <div class="profile-slide active">
+                            <div class="slide-content-box">
+                                <div class="profile-text">
+                                    <p><strong>멀티미터(Multimeter)</strong></p>
+                                    <p>전압, 전류, 저항 등을 재는 기본 측정 장치<br>
+                                    회로에 흐르는 전기의 세기와 흐름을 방해하는 정도를 측정해 숫자로 나타낸다.<br>
+                                    <br>
+                                    선 연결 상태 확인이나 건전지·부품의 전기 상태 점검</p>
+                                </div>
+                                <div class="profile-image">
+                                    <img src="equipIMG/multimeter.jpg" alt="디지털멀티미터">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2페이지 -->
+                        <div class="profile-slide">
+                            <div class="slide-content-box">
+                                <div class="profile-text">
+                                    <p><strong>오실로스코프(Oscilloscope)/함수발생기(Functiongenerator)</strong></p>
+                                    <p>전기 신호를 화면에 그리거나 직접 만들어 내는 장치<br>
+                                    오실로스코프는 전기 신호의 변화를 물결 모양으로 띄워 보여 주고, 함수발생기는 원하는 모양과 빠르기의 전기 신호를 직접 만들어 낸다.<br>
+                                    <br>
+                                    신호 변화 관찰, 전자 회로 실험용 신호 만들기</p>
+                                </div>
+                                <div class="profile-image">
+                                    <img src="equipIMG/oscilloscope functiongenerator.jpg" alt="오실로스코프/함수발생기">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3페이지 -->
+                        <div class="profile-slide">
+                            <div class="slide-content-box">
+                                <div class="profile-text">
+                                    <p><strong>압력측정센서(Pressure sensor)</strong></p>
+                                    <p>기체나 주변에서 가해지는 압력을 재는 센서<br>
+                                    기체 입자가 벽면에 부딪히는 힘이나 압력의 변화를 감지해 숫자와 그래프로 보여 준다.<br>
+                                    <br>
+                                    밀폐 용기 속 압력 변화 확인, 기체가 생기는 실험 측정</p>
+                                </div>
+                                <div class="profile-image">
+                                    <img src="equipIMG/pressure sensor.jpg" alt="압력측정센서">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4페이지 -->
+                        <div class="profile-slide">
+                            <div class="slide-content-box">
+                                <div class="profile-text">
+                                    <p><strong>조도센서(Photoresistor)</strong></p>
+                                    <p>주변 빛의 세기를 알아내는 센서<br>
+                                    빛이 닿는 양에 따라 전기적 성질이 바뀌는 특징을 이용해 밝기의 변화를 감지한다.<br>
+                                    <br>
+                                    빛을 비추거나 가릴 때의 변화 확인, 밝기에 반응하는 실험</p>
+                                </div>
+                                <div class="profile-image">
+                                    <img src="equipIMG/photoresistor.jpg" alt="조도센서">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5페이지 -->
+                        <div class="profile-slide">
+                            <div class="slide-content-box">
+                                <div class="profile-text">
+                                    <p><strong>실체현미경(Stereo Microscope)</strong></p>
+                                    <p>작은 물체를 입체적으로 확대해 보는 장치<br>
+                                    두 눈으로 들여다보듯 넓고 입체적으로 보여 주어 표면의 굴곡이나 구조를 살피기 좋다.<br>
+                                    <br>
+                                    작은 물질이나 표면 관찰, 핀셋 등 도구를 쓰며 가까이서 보는 실험</p>
+                                </div>
+                                <div class="profile-image">
+                                    <img src="equipIMG/microscope.jpg" alt="실체현미경">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6페이지 -->
+                        <div class="profile-slide">
+                            <div class="slide-content-box">
+                                <div class="profile-text">
+                                    <p><strong>원심분리기(Centrifuge)</strong></p>
+                                    <p>물질을 빠르게 회전시켜 성분을 나누는 장치<br>
+                                    고속 회전할 때 생기는 바깥쪽 힘(원심력)을 이용해 물질의 성분을 분리한다.<br>
+                                    <br>
+                                    섞인 물질이나 액체·입자의 성분 분리 실험</p>
+                                </div>
+                                <div class="profile-image">
+                                    <img src="equipIMG/centrifuge.jpg" alt="원심분리기">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-dots">
+                    <button class="dot-btn active" onclick="currentProfileSlide(0)">1</button>
+                    <button class="dot-btn" onclick="currentProfileSlide(1)">2</button>
+                    <button class="dot-btn" onclick="currentProfileSlide(2)">3</button>
+                    <button class="dot-btn" onclick="currentProfileSlide(3)">4</button>
+                    <button class="dot-btn" onclick="currentProfileSlide(4)">5</button>
+                    <button class="dot-btn" onclick="currentProfileSlide(5)">6</button>
+                </div>
+            </div>
                
             <!-- [탭 3] Creators (연락처 정보) -->
             <div id="tab3" class="tab-pane">
